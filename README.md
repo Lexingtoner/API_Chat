@@ -1,60 +1,60 @@
-# Chat and Messages API
+# API чата и сообщений
 
-This is a FastAPI application that provides API endpoints for managing chats and messages. The application uses PostgreSQL as the database backend and SQLAlchemy as the ORM.
+Это приложение FastAPI, предоставляющее конечные точки API для управления чатами и сообщениями. Приложение использует PostgreSQL в качестве базы данных и SQLAlchemy в качестве ORM.
 
-## Features
+## Особенности
 
-- Create new chats with titles
-- Send messages to specific chats
-- Retrieve chats along with their messages
-- Delete chats (with all associated messages)
-- Input validation for titles and messages
-- Cascading deletion of messages when a chat is removed
+- Создавайте новые чаты с заголовками
+- Отправлять сообщения в определенные чаты
+- Получить чаты вместе с их сообщениями
+- Удаление чатов (со всеми связанными сообщениями)
+- Проверка ввода заголовков и сообщений.
+- Каскадное удаление сообщений при удалении чата
 
-## Requirements
+## Требования
 
-- Docker
+- Докер
 - Docker Compose
 
-## Setup and Running
+## Настройка и запуск
 
-1. Clone this repository
-2. Navigate to the project directory
-3. Run the following command to start the application:
+1. Клонируйте этот репозиторий
+2. Перейдите в каталог проекта.
+3. Выполните следующую команду, чтобы запустить приложение:
 
-```bash
-docker-compose up --build
+``` баш
+docker-compose --build
 ```
 
-The API will be available at `http://localhost:8000`.
+API будет доступен по адресу <http://localhost:8000>.
 
-## API Endpoints
+## Конечные точки API
 
-- `POST /chats/` - Create a new chat
-- `POST /chats/{id}/messages/` - Send a message to a chat
-- `GET /chats/{id}` - Get a chat and its messages (with limit parameter)
-- `DELETE /chats/{id}` - Delete a chat and all its messages
+- `POST /chats/` - Создать новый чат.
+- `POST /chats/{id}/messages/` - отправить сообщение в чат.
+- `GET /chats/{id}` - Получить чат и его сообщения (с параметром limit)
+- `DELETE /chats/{id}` — удалить чат и все его сообщения.
 
-## Running Tests
+## Запуск тестов
 
-To run the tests:
+Чтобы запустить тесты:
 
-```bash
-docker exec -it <container-name> pytest
+``` баш
+docker exec -it <имя-контейнера> pytest
 ```
 
-Or locally after installing dependencies:
+Или локально после установки зависимостей:
 
-```bash
-pip install -r requirements.txt
-pytest tests/
+``` баш
+pip install -r требования.txt
+тесты pytest/
 ```
 
-## Technologies Used
+## Используемые технологии
 
-- FastAPI
-- SQLAlchemy
+- ФастAPI
+- SQLАлхимия
 - PostgreSQL
-- Docker & Docker Compose
-- Pydantic for request/response validation
-- Pytest for testing
+- Докер и Docker Compose
+- Pydantic для проверки запроса/ответа
+- Pytest для тестирования
